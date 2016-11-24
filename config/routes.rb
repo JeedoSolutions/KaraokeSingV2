@@ -1,3 +1,30 @@
+Rails.application.routes.draw do
+
+  get 'pages/index'
+
+  get 'pages/about_us'
+
+  get 'pages/faq'
+
+  get 'pages/tos'
+
+  get 'pages/contact_us'
+
+  
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  resources :employees
+  
+  devise_for :users , :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :omniauth_authorize => 'users/omniauth_authorize' }
+  
+  get 'home/index'
+  root 'home#index'
+
+
+  
+  #get '/intranet', to: 'intranet#login', as: 'login'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -52,3 +79,4 @@
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
