@@ -1,0 +1,186 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font
+ *= require bootstrap-material-design
+ */
+ 
+html{
+    position: relative; 
+    min-height: 100%;
+}
+
+body{
+    margin: 0 0 65px;
+}    
+
+.navbar-default {
+    background-color:#FF5722 !important;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #efefef;
+}
+ .dropdown-submenu {
+    position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -5px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    }
+
+    .dropdown-submenu > a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover > a:after {
+    border-left-color: #fff;
+    }
+
+    .dropdown-submenu.pull-left {
+    float: none;
+    }
+
+    .dropdown-submenu.pull-left > .dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+    }
+
+.bs-docs-footer {
+      background-color:#FF5722;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      padding-left:20px;
+      padding-right:20px;
+      color:white;
+}
+@media (min-width: 1024px){
+.bs-docs-footer {
+    text-align: left;
+}
+}
+
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+}}
+@media (min-width: 992px){
+.container {
+    width: 970px;
+}}
+@media (min-width: 768px){
+.container {
+    width: 750px;
+}}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* DEFAULT CSS */
+
+/* Paddings */
+.large-padding{
+	padding:5px 10px;
+}
+.big-padding{
+	padding:2em;
+}
+.no-padding{
+	padding:0;
+}
+/* Margins */
+.no-margin{
+	margin:0;
+}
+.big-top-space{
+	margin-top:50px;
+}
+.top-space{
+	margin-top:1em;
+}
+.bottom-space{
+	margin-bottom:2em;
+}
+/* Alineamiento */
+.no-float{
+	float: none !important;
+}
+.in-top{
+	vertical-align:top !important;
+}
+.inline-block{
+	float: none !important;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right: -4px;
+}
+.absolute{
+	position:absolute;
+}
+/* Tamaños */
+.small{
+	font-size:12px;
+}
+.normal{
+	font-size: 1.2em;
+}
+.medium{
+	font-size:1.5em;
+}
+.big{
+	font-size:3em;
+}
+.bigger{
+	font-size:4em;
+}
+.ultra-big{
+	font-size:8em;
+}
+
+
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Karaoke</title>
+   <link href="home.scss" rel="stylesheet"> 
+   <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Latest compiled and minified CSS -->
+    <%= yield :stylesheets %>
+    <style>
+     .checkbox input[type=checkbox] {
+          opacity: 10;
+          
+          margin: 1px 230px;
+          z-index: 1;
+          width: 60px;
+          height: 19px;
+          /* overflow: hidden; */
+          left: 0;
+      }
+       .form-horizontal .checkbox {
+          padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+<header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <div class="navbar-collapse collapse navbar-responsive-collapse">
+                 <br>
+                 <ul class="nav navbar-nav kostic medium"  > 
+                    <% if @employees == nil %>
+                    <%= render 'layouts/menu' %>
+                  <% end %>
+                 </ul>
+              </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+            <ul class="nav navbar-nav navbar-right">
+              <!--<li>< %= link_to 'INICIO', root_path %></li>-->
+              <!--<li><a href="/home/testimonio">Testimonios</a></li>-->
+             
+              <% if current_user %>
+                <li class="dropdown">
+                  <span class="hidden" id="userId"><%= current_user.id %></span>
+                  <span class="hidden" id="userId"><%= @auth.inspect %></span>
+                  <a href="#" id="image-profile" class="dropdown-toggle kostic" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <% if @auth!= nil %>
+                      <%= current_user.nombre %>    <%= image_tag(@auth['info']['image'], width:'60', height:'60', class:'img-responsive img-circle') %>
+                    <br>
+                    <br>
+                    <% else %>
+                      <%= current_user.nombre %>    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'img-responsive img-circle') %>
+                     
+                    <% end %>
+                  </a>
+                  <ul class="dropdown-menu">
+                       <li><%= link_to 'Mi cuenta',edit_user_registration_path%></li>
+                     <!--<li>< %= link_to 'Mi cuenta', home_index_path %></li>-->
+                     <!--<li>< %= link_to 'Perfil',edit_user_registration_path%></li>-->
+                     <% if current_user.admin == true %>
+                        <li><%= link_to 'Administrar Usuarios', rails_admin.dashboard_path %></li> 
+                      <% end %>
+                    <li><%= link_to 'Reserva', reservacli_path %></li> 
+                    <li role="separator" class="divider"></li>
+                    <li><%= link_to 'Cerrar Sessión', destroy_user_session_path, :method => 'DELETE' %></a></li>
+                  </ul>
+                </li>
+              <% elsif  @employees != nil %>
+                <li class="dropdown">
+                   <a href="#" id="image-profile" class="dropdown-toggle kostic" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <%= @employees['nombre']+" "+ @employees['apellido']%> 
+                   </a>
+                   <ul class="dropdown-menu">
+                     
+                     <li><%= link_to 'Cerrar Sessión', cerrar_sesion_path, :method => 'DELETE' %></li>
+                   </ul>
+                </li>
+                
+              <% else %>
+                <li class="dropdown">
+                  <a href="#" id="image-profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    
+                    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'img-responsive img-circle') %>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
+                    <li><%= link_to 'Registrarse', new_user_registration_path  %></li>
+                  </ul>
+                </li>
+              <% end %>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <!-- /header -->
+    
+   
+         
+        
+      
+    
+      
+      
+       <% flash.each do |key, value| %>
+          <div class="alert alert-success text-center <%= key %> alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <%= value %>
+          </div>
+        <% end %>
+       
+      
+        <div id="main_container" class="container">
+                 <% if @employees != nil %>      
+              <div class="row">
+                <div class="col-lg-9">
+                  <%= bootstrap_flash %>
+                    <div class="page-header">
+                      <h1><%= yield :header_title %> <small><%= yield :header_sub_title %></small>
+                    </h1>
+                   </div>
+                  <%= yield %>
+                </div>
+                <div class="col-lg-3">
+                  <div class="panel-heading">
+                    <h3 class="kostic">Mantenimientos</h3>
+                    <ul class="nav nav-list">
+                       <% if (@employees != nil) %>
+                          
+                           <% if (@employees['admin'] == true) %>
+                                <%= render 'layouts/menu1' %>
+                           <% end %>
+                       <% end %>
+                    </ul>
+                  </div><!--/.well -->
+                </div><!--/span-->
+              </div><!--/row-->
+              
+           <%else%>   
+            <main>
+            <%= yield %>
+
+          </main>
+            <% end %>
+        </div>
+    <!-- /footer -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <footer class="bs-docs-footer kostic medium">
+          <br>
+          &copy; Karaoke-Bar 2016 | Todos los Derechos Reservados
+        </footer>
+      </div>
+    </nav>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :javascript %>
+</body>
+</html>
+
