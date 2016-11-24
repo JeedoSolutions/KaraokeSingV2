@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local_id: 
+  no_sala: 1
+  qt_capacidad: 1
+  descripcion: MyString
+
+two:
+  local_id: 
+  no_sala: 1
+  qt_capacidad: 1
+  descripcion: MyString
