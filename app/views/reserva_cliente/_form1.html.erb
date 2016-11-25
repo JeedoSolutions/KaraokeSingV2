@@ -1,0 +1,24 @@
+<%= simple_form_for @reserva_cli,:url => reservaclicreate_path, :method => :post, :html => { :class => 'form-horizontal' } do |f| %>
+
+
+  <div class="input select required reserva_local">
+    <label class="select required control-label" for="reserva_local_id">
+      <abbr title="required">*</abbr> Local</label>
+      <%= f.collection_select :local_id, Local.order(:No_Local), :id, :No_Local, include_blank: false ,:input_html => { :class => 'chosen'} %>
+  </div>
+  <div class="input select required reserva_sala">
+    <label class="select required control-label" for="reserva_sala_id">
+      <abbr title="required">*</abbr> Sala</label>
+          <%= f.grouped_collection_select :sala_id, Local.order(:No_Local), :sala, :No_Local, :id, :descripcion, include_blank: false%>
+      </div>
+  <%= f.input :fe_reserva %>
+  <%= error_span(@reserva_cli[:fe_reserva]) %>
+  <%= f.input :descripcion %>
+  <%= error_span(@reserva_cli[:descripcion]) %>
+  
+
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                reservacli_path, :class => 'btn btn-default' %>
+<% end %>
