@@ -88,7 +88,7 @@ body{
       bottom: 0;
       left: 0;
       right: 0;
-      height: 80px;
+      height: 65px;
       padding-left:20px;
       padding-right:20px;
       color:white;
@@ -183,4 +183,13 @@ body{
 .error-template {
     padding: 40px 15px;
     text-align: center;
+}
+
+/*.border{
+    border: solid;
+    border-color:#E0E0E0;
+}*/
+
+.black{
+    background-color: black;
 }

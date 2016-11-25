@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SingKing</title>
+  <title>Sing King Karaoke</title>
    <link href="home.scss" rel="stylesheet"> 
    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
     <%= csrf_meta_tags %>
@@ -27,7 +27,7 @@
 <body>
 <header>
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid border black">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -38,7 +38,7 @@
             </button>
               <div class="navbar-collapse collapse navbar-responsive-collapse">
                  <br>
-                 <ul class="nav navbar-nav kostic medium"  > 
+                 <ul class="nav navbar-nav fontmenu normal"  > 
                     <% if @employees == nil %>
                     <%= render 'layouts/menu' %>
                   <% end %>
@@ -59,11 +59,11 @@
                   <span class="hidden" id="userId"><%= @auth.inspect %></span>
                   <a href="#" id="image-profile" class="dropdown-toggle kostic" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <% if @auth!= nil %>
-                      <%= current_user.nombre %>    <%= image_tag(@auth['info']['image'], width:'60', height:'60', class:'img-responsive img-circle') %>
+                      <%= current_user.nombre %>    <%= image_tag(@auth['info']['image'], width:'60', height:'60', class:'') %>
                     <br>
                     <br>
                     <% else %>
-                      <%= current_user.nombre %>    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'img-responsive img-circle') %>
+                      <%= current_user.nombre %>    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'') %>
                      
                     <% end %>
                   </a>
@@ -93,8 +93,9 @@
               <% else %>
                 <li class="dropdown">
                   <a href="#" id="image-profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    
-                    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'img-responsive img-circle') %>
+                    <br>
+                    <br>
+                    <%= image_tag('profile-default.png', width:'90', height:'90', :class =>'') %>
                   </a>
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
@@ -138,7 +139,7 @@
                 </div>
                 <div class="col-lg-3">
                   <div class="panel-heading">
-                    <h3 class="kostic">Mantenimientos</h3>
+                    <h3 class="">Mantenimientos</h3>
                     <ul class="nav nav-list">
                        <% if (@employees != nil) %>
                           
@@ -161,10 +162,9 @@
     <!-- /footer -->
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
-        <footer class="bs-docs-footer kostic medium">
+        <footer class="bs-docs-footer medium border black">
           <br>
-          &copy; SingKing - 2016 | Derechos Reservados
-        </footer>
+          Sing King Karaoke - Noviembre 2016   -   Jeedo&copy;
       </div>
     </nav>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
