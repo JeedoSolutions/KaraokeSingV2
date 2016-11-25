@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class='col-md-4  col-sm-offset-4'>
-      <div class="panel panel-primary">
-        <div class="panel-heading kostic medium">Iniciar Sesión</div>
+      <div class="panel panel-info">
+        <div class="panel-heading  medium">Iniciar Sesión</div>
           <div class="panel-body">
-            <center><%= image_tag('user.png', width:'150', height:'150', align:"center", :class =>'img-responsive img-circle') %></center>
+            <center><%= image_tag('profile-default.png', width:'150', height:'150', align:"center", :class =>'img-responsive img-circle') %></center>
             <br>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
