@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
+  resources :inventarios
+  resources :inventories
+  resources :productos
+  resources :tipo_productos
+  resources :reservas
+  resources :eventos
+  resources :salas
+  resources :administrator_locals
+  resources :locals
 
+
+  
   get 'pages/index'
 
   get 'pages/about_us'
@@ -11,6 +22,16 @@ Rails.application.routes.draw do
   get 'pages/contact_us'
 
   
+    
+  #MANTENIMIENTOS
+  get 'productos/new'
+  get 'tipo_productos/new'
+  get 'salas/new'
+  get 'eventos/new'
+  get 'locals/new'
+  
+  
+  get 'tipo_productos/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   resources :employees
@@ -19,6 +40,22 @@ Rails.application.routes.draw do
   
   get 'home/index'
   root 'home#index'
+  begin 
+    get "/intranet/intranet", to: 'intranet#intranet', as: 'intranet' 
+    get "/intranet/login", to: 'intranet#login', as: 'login' 
+    post "/intranet/intento_sesion", to: 'intranet#intento_sesion', as: 'intento_sesion'
+    delete "/intranet/cerrar_sesion", to: 'intranet#cerrar_sesion', as: 'cerrar_sesion'
+    
+  end
+  
+  begin 
+    get "/reserva_cliente/reservacli", to: 'reserva_cliente#reservacli', as: 'reservacli'
+    get "/reserva_cliente/new", to: 'reserva_cliente#new', as: 'reservaclinew'
+    post "/reserva_cliente/create", to: 'reserva_cliente#create', as: 'reservaclicreate' 
+    get "/reserva_cliente/edit/:id", to: 'reserva_cliente#edit', as: 'reservacliedit'
+    put "/reserva_cliente/update/:id", to: 'reserva_cliente#update', as: 'reservacliupdate'
+    delete  "/reserva_cliente/destroy/:id", to: 'reserva_cliente#destroy', as: 'reservaclidelete'
+  end
 
 
   
@@ -79,4 +116,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
 end
