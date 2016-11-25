@@ -30,6 +30,38 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# GEMAS AGREGADAS
+gem 'autoprefixer-rails'
+gem 'material_icons'
+gem 'mysql2', '0.4.4'
+#gem 'bootstrap', '4.0.0.alpha4'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 0.0.9'
+gem 'rails_admin'
+
+gem 'omniauth'
+#gem 'omniauth-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass', '~> 4.6.2'
+
+# Bootstrap Frontend Framework Support
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', '>= 3.2.0', '< 3.2.2'
+gem 'paperclip', '~> 5.1'
+# Simplified Form Management Support
+gem 'simple_form'
+
+#MATERIAL DESIGN
+gem 'bootstrap-material-design'
+
+#FIN
+
+
+
 
 
 group :development, :test do
