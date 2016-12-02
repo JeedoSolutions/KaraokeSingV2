@@ -1,6 +1,4 @@
-<h1 class=""><i class="fa fa-cogs" aria-hidden="true"></i>
-Mantenimientos</h1>
-   <!--Menu2 Sidebar-->
+<!--Menu2 Sidebar-->
     <div class="container">
       
       <div class="row">
@@ -12,15 +10,19 @@ Mantenimientos</h1>
            </div>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3 class="">Mantenimientos</h3>
-            <ul class="nav nav-list">
+        <!--<div class="col-lg-3">-->
+          <!--<div class="well sidebar-nav">-->
+            <!--<h3 class="">Mantenimientos</h3>-->
+            <!--<ul class="nav nav-list">-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
                <% if (@employee != nil) %>
-                  
-                   <% if (@employee['admin'] == true) %>
-                        <%= render 'layouts/menu1' %>
-                   <% end %>
+                  <% if (@employee['admin'] == true) %>
+                  <%= render 'layouts/menu1' %>
+                  <% end %>
                <% end %>
             </ul>
           </div><!--/.well -->

@@ -39,8 +39,8 @@
               <div class="navbar-collapse collapse navbar-responsive-collapse">
                  <br>
                  <ul class="nav navbar-nav fontmenu normal"  > 
-                    <% if @employees == nil %>
-                    <%= render 'layouts/menu' %>
+                  <% if @employees == nil %>
+                  <%= render 'layouts/menu' %>
                   <% end %>
                  </ul>
               </div>
@@ -50,9 +50,6 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             
             <ul class="nav navbar-nav navbar-right">
-              <!--<li>< %= link_to 'INICIO', root_path %></li>-->
-              <!--<li><a href="/home/testimonio">Testimonios</a></li>-->
-             
               <% if current_user %>
                 <li class="dropdown">
                   <span class="hidden" id="userId"><%= current_user.id %></span>
@@ -110,22 +107,15 @@
       </nav>
     </header>
     <!-- /header -->
-    
-   
-         
-        
-      
-    
-      
+  
       
        <% flash.each do |key, value| %>
           <div class="alert alert-success text-center <%= key %> alert-dismissible">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-          <%= value %>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <%= value %>
           </div>
         <% end %>
        
-      
         <div id="main_container" class="container">
                  <% if @employees != nil %>      
               <div class="row">
@@ -139,12 +129,12 @@
                 </div>
                 <div class="col-lg-3">
                   <div class="panel-heading">
-                    <h3 class="">Mantenimientos</h3>
+                    <%= link_to "Inicio", pages_index_path  %>
+                    <!--<<h3 class="">Mantenimientos</h3>-->
                     <ul class="nav nav-list">
-                       <% if (@employees != nil) %>
-                          
-                           <% if (@employees['admin'] == true) %>
-                                <%= render 'layouts/menu1' %>
+                        <% if (@employees != nil) %>
+                        <% if (@employees['admin'] == true) %>
+                        <!--< %= render 'layouts/menu1' %>-->
                            <% end %>
                        <% end %>
                     </ul>
