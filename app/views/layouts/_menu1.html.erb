@@ -1,17 +1,20 @@
-<li><%= link_to "Mantenimiento de Trabajadores", employees_path  %></li>
-
-<li><%= link_to "Mantenimiento de Tipo de Producto", tipo_productos_path  %></li>
-
-<li><%= link_to "Mantenimiento de Productos", productos_path  %></li>
-
-<li><%= link_to "Mantenimiento de Locales", locals_path %></li>
-
-<li><%= link_to "Mantenimiento de Salas", salas_path %></li>
-
-<li><%= link_to "Mantenimiento de Eventos", eventos_path  %></li>
-
-<li><%= link_to "Mantenimiento de Reservas", reservas_path  %></li>
-
-<li><%= link_to "Mantenimiento de Inventario", inventarios_path  %></li>
-
-
+<div class="well">
+    <h1>Mantenimientos</h1>
+    <%= link_to "Trabajadores", employees_path , :class => 'btn btn-raised btn-info' %> 
+    <br>
+    <%= link_to "Tipo de Producto", tipo_productos_path , :class => 'btn btn-raised btn-info' %>
+    <br>
+    <%= link_to "Productos", productos_path , :class => 'btn btn-raised btn-info' %>
+    <br>
+    <%= link_to "Locales", locals_path , :class => 'btn btn-raised btn-info' %>
+    <br>
+    <%= link_to "Salas", salas_path , :class => 'btn btn-raised btn-info' %>
+    <br>
+    <%= link_to "Eventos", eventos_path , :class => 'btn btn-raised btn-info' %>
+    <br>
+    <%= link_to "Reservas", reservas_path , :class => 'btn btn-raised btn-info' %>
+    <br>
+    <%= link_to "Inventario", inventarios_path , :class => 'btn btn-raised btn-info' %>
+    <br>
+    <br>
+</div>

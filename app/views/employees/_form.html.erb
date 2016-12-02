@@ -1,10 +1,9 @@
 <div class="container">
   <div class="row">
     <div class='col-md-8 '>
-      <div class="panel panel-primary">
+      <div class="panel panel-info">
         <div class="panel-heading">Formulario Trabajador</div>
         <div class="panel-body">
-          
               <%= simple_form_for @employee, :html => { :class => 'form-horizontal' } do |f| %>
                 <%= f.input :nombre  %>
                 <%= error_span(@employee[:nombre]) %>
@@ -19,12 +18,11 @@
                 <%= f.input :admin, :html => { :class => 'form-inline' }, inline_label: 'Administrador'%>
                 
                 <%= error_span(@employee[:admin]) %>
-               <div class="panel-footer">
-                 
-                <%= f.button :submit, :class => 'btn-primary' %>
+                <br>
+                <%= f.button :submit, :class => 'btn-info' %>
                 <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                              employees_path, :class => 'btn btn-default' %>
-               </div>
+                              employees_path, :class => 'btn btn-info' %>
+               
               <% end %>
         </div>
        

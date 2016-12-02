@@ -48,7 +48,6 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            
             <ul class="nav navbar-nav navbar-right">
               <% if current_user %>
                 <li class="dropdown">
@@ -61,13 +60,10 @@
                     <br>
                     <% else %>
                       <%= current_user.nombre %>    <%= image_tag('profile-default.png', width:'60', height:'60', :class =>'') %>
-                     
                     <% end %>
                   </a>
                   <ul class="dropdown-menu">
                        <li><%= link_to 'Mi cuenta',edit_user_registration_path%></li>
-                     <!--<li>< %= link_to 'Mi cuenta', home_index_path %></li>-->
-                     <!--<li>< %= link_to 'Perfil',edit_user_registration_path%></li>-->
                      <% if current_user.admin == true %>
                         <li><%= link_to 'Administrar Usuarios', rails_admin.dashboard_path %></li> 
                       <% end %>
@@ -82,7 +78,6 @@
                       <%= @employees['nombre']+" "+ @employees['apellido']%> 
                    </a>
                    <ul class="dropdown-menu">
-                     
                      <li><%= link_to 'Cerrar Sessión', cerrar_sesion_path, :method => 'DELETE' %></li>
                    </ul>
                 </li>
@@ -129,9 +124,9 @@
                 </div>
                 <div class="col-lg-3">
                   <div class="panel-heading">
-                    <%= link_to "Inicio", pages_index_path  %>
-                    <!--<<h3 class="">Mantenimientos</h3>-->
+                    
                     <ul class="nav nav-list">
+                        <%= link_to "Volver", pages_index_path , :class => 'btn btn-raised btn-default medium fontmenu' %>
                         <% if (@employees != nil) %>
                         <% if (@employees['admin'] == true) %>
                         <!--< %= render 'layouts/menu1' %>-->
