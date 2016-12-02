@@ -1,9 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class='col-md-8 '>
-      <div class="panel panel-info">
-        <div class="panel-heading">Formulario Trabajador</div>
-        <div class="panel-body">
+<div class="well">
+
               <%= simple_form_for @employee, :html => { :class => 'form-horizontal' } do |f| %>
                 <%= f.input :nombre  %>
                 <%= error_span(@employee[:nombre]) %>
@@ -24,11 +20,5 @@
                               employees_path, :class => 'btn btn-info' %>
                
               <% end %>
-        </div>
-       
-         
-       
-      </div>
-    </div>
-  </div>
+
 </div>

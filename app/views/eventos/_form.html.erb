@@ -1,3 +1,5 @@
+<div class="well">
+
 <%= simple_form_for @evento, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.association :local, label_method: :No_Local, value_method: :id, include_blank: false %>
   <%= error_span(@evento[:local]) %>
@@ -9,7 +11,9 @@
   <%= f.input :descripcion %>
   <%= error_span(@evento[:descripcion]) %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= f.button :submit, :class => 'btn-info' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                eventos_path, :class => 'btn btn-default' %>
+                eventos_path, :class => 'btn btn-info' %>
 <% end %>
+
+</div>

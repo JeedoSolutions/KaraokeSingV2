@@ -85,11 +85,10 @@
               <% else %>
                 <li class="dropdown">
                   <a href="#" id="image-profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <br>
-                    <br>
-                    <%= image_tag('profile-default.png', width:'90', height:'90', :class =>'') %>
+                  
+                    
                   </a>
-                  <ul class="dropdown-menu">
+         
                     <li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
                     <li><%= link_to 'Registrarse', new_user_registration_path  %></li>
                   </ul>

@@ -1,3 +1,5 @@
+<div class="well">
+
 <%= simple_form_for @reserva, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.association :sala, label_method: :descripcion, value_method: :id, include_blank: false %>
   <%= error_span(@reserva[:sala]) %>
@@ -13,7 +15,8 @@
   <%= f.input :aprobado %>
   <%= error_span(@reserva[:aprobado]) %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= f.button :submit, :class => 'btn-info' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                reservas_path, :class => 'btn btn-default' %>
+                reservas_path, :class => 'btn btn-info' %>
 <% end %>
+</div>
