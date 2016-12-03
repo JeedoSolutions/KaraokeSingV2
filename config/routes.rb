@@ -20,7 +20,17 @@ Rails.application.routes.draw do
   get 'pages/tos'
 
   get 'pages/contact_us'
-
+  
+  get 'pages/canciones'
+  
+  
+  #Lista de canciones!
+  get 'canciones/thriller'
+  get 'canciones/thriller'
+  get 'canciones/thriller'
+  get 'canciones/thriller'
+  get 'canciones/thriller'
+  get 'canciones/thriller'
   
     
   #MANTENIMIENTOS
