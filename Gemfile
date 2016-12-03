@@ -46,7 +46,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.6.2'
-
+gem 'validates_email_format_of'
 # Bootstrap Frontend Framework Support
 gem 'therubyracer'
 gem 'less-rails'

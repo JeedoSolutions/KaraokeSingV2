@@ -9,7 +9,7 @@ class EmployeesController < ApplicationController
   end
 
   # GET /employees/1
-  # GET /employees/1.json
+  # GET /employees/1.jsonno funca
   def show
     self.validar_admin
   end
@@ -33,7 +33,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
+        format.html { redirect_to @employee, notice: 'Registro creado de manera exitosa.' }
         format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class EmployeesController < ApplicationController
     self.validar_admin
     respond_to do |format|
       if @employee.update(employee_params)
-        format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
+        format.html { redirect_to @employee, notice: 'Resgitro actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class EmployeesController < ApplicationController
     if(@employee['id']!=6)
       @employee.destroy
       respond_to do |format|
-        format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
+        format.html { redirect_to employees_url, notice: 'Registro eliminado.' }
         format.json { head :no_content }
       end
     else

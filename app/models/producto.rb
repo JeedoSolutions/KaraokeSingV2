@@ -16,11 +16,11 @@ class Producto < ActiveRecord::Base
       self.tipo_producto.name
    end
    
-   validates :name, presence: true, 
+   validates :name, presence: true   , 
                     uniqueness: {case_sensitive: false}
                     
-    validates :price, presence: true, 
-                 numericality: { greater_than_or_equal_to: 0 }
+    validates :price, presence: {message: "Dato Obligatorio"}, 
+                 numericality: { greater_than_or_equal_to: 0,message: "El precio debe ser mayor que cero"}
                  
     validates :estado, presence: true
                     

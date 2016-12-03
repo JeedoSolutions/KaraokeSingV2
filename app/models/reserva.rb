@@ -3,9 +3,11 @@ class Reserva < ActiveRecord::Base
   belongs_to :user
   belongs_to :local
   
-  
-  validates :sala, presence: true
-  accepts_nested_attributes_for :user
+  validates :sala,:descripcion,:user, presence: {message: "Dato Obligatorio"}
+
+     validates :descripcion, length: { maximum: 255, 
+        too_long: "Máximo %{count} caractéres permitido" }
+     
   
   def sala_name
       self.sala.descripcion

@@ -6,14 +6,14 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:local_id) %></th>
-      <th><%= model_class.human_attribute_name(:producto_id) %></th>
-      <th><%= model_class.human_attribute_name(:cant) %></th>
+      <th><%= model_class.human_attribute_name(:local) %></th>
+      <th><%= model_class.human_attribute_name(:producto) %></th>
+      <th><%= model_class.human_attribute_name(:cantidad) %></th>
       <th><%= model_class.human_attribute_name(:precio_compra) %></th>
       <th><%= model_class.human_attribute_name(:precio_venta) %></th>
       <th><%= model_class.human_attribute_name(:entrada_salida) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name(:creado) %></th>
+      <th><%=t '.actions', :default => t("helpers.acciones") %></th>
     </tr>
   </thead>
   <tbody>
