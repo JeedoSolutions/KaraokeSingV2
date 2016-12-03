@@ -8,20 +8,20 @@
             <br>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
-    					<%= f.label :email %><br />
+    					<%= f.label :email, "Correo" %><br />
     					<div class="cols-sm-10">
     						<div class="input-group">
     							<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-    							<%= f.email_field :email, autofocus: true %>
+    							<%= f.email_field :email, placeholder: "Ingrese su correo", autofocus: true %>
     						</div>
     					</div>
     				</div>
             <div class="form-group">
-              	<%= f.label :password %><br />
+              	<%= f.label :password, "Contraseña" %><br />
             		<div class="cols-sm-10">
             			<div class="input-group">
             				<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            				<%= f.password_field :password, autocomplete: "off" %>
+            				<%= f.password_field :password, placeholder: "Ingrese su contraseña", autocomplete: "off" %>
             			</div>
             		</div>
             </div>
@@ -29,7 +29,7 @@
               <% if devise_mapping.rememberable? -%>
                 <div class="field">
                   <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me %>
+                  <%= f.label :remember_me, "Recuérdame" %>
                 </div>
               <% end -%>
               
