@@ -11,7 +11,11 @@
       <abbr title="required">*</abbr> Sala</label>
           <%= f.grouped_collection_select :sala_id, Local.order(:No_Local), :sala, :No_Local, :id, :descripcion, include_blank: false%>
       </div>
-  <%= f.input :fe_reserva %>
+      
+  <%= f.label :fe_reserva %>
+  <br>
+  <%= f.text_field :fe_reserva %>
+
   <%= error_span(@reserva_cli[:fe_reserva]) %>
   <%= f.input :descripcion %>
   <%= error_span(@reserva_cli[:descripcion]) %>

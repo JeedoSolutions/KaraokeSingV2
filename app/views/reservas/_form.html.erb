@@ -7,7 +7,10 @@
   <%= f.association :user, label_method: :nombre, value_method: :id, include_blank: false %>
   <%= error_span(@reserva[:user]) %>
   
-  <%= f.input :fe_reserva %>
+  
+  <%= f.label :fe_reserva %>
+  <br>
+  <%= f.text_field :fe_reserva %>
   <%= error_span(@reserva[:fe_reserva]) %>
   <%= f.input :descripcion %>
   <%= error_span(@reserva[:descripcion]) %>

@@ -4,7 +4,9 @@
   <%= f.association :local, label_method: :No_Local, value_method: :id, include_blank: false %>
   <%= error_span(@evento[:local]) %>
   
-  <%= f.input :fe_evento %>
+  <%= f.label :fe_evento %>
+  <br>
+  <%= f.text_field :fe_evento %>
   <%= error_span(@evento[:fe_evento]) %>
   <%= f.input :capacidad %>
   <%= error_span(@evento[:capacidad]) %>

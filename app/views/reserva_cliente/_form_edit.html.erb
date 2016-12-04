@@ -7,8 +7,9 @@
   <%= error_span(@reserva_cli[:sala]) %>
   
  
-  
-  <%= f.input :fe_reserva %>
+  <%= f.label :fe_reserva %>
+  <br>
+  <%= f.text_field :fe_reserva %>
   <%= error_span(@reserva_cli[:fe_reserva]) %>
   <%= f.input :descripcion %>
   <%= error_span(@reserva_cli[:descripcion]) %>
