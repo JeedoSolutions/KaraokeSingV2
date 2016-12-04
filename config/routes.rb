@@ -37,6 +37,17 @@ Rails.application.routes.draw do
   get 'canciones/superbass'
   
   
+  get 'canciones/one'
+  get 'canciones/sunshine'
+  get 'canciones/your'
+  get 'canciones/miss'
+  get 'canciones/loved'
+  get 'canciones/everything'
+  get 'canciones/everybody'
+  get 'canciones/superbass'
+  get 'canciones/superbass'
+  get 'canciones/superbass'
+  
   #MANTENIMIENTOS
   get 'productos/new'
   get 'tipo_productos/new'
