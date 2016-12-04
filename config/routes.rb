@@ -35,8 +35,6 @@ Rails.application.routes.draw do
   get 'canciones/bealright'
   get 'canciones/team'
   get 'canciones/superbass'
-  
-  
   get 'canciones/one'
   get 'canciones/sunshine'
   get 'canciones/your'
