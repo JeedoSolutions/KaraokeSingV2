@@ -33,7 +33,7 @@ class ProductosController < ApplicationController
 
     respond_to do |format|
       if @producto.save
-        format.html { redirect_to @producto, notice: 'Producto was successfully created.' }
+        format.html { redirect_to @producto, notice: 'Producto creado con éxito.' }
         format.json { render :show, status: :created, location: @producto }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class ProductosController < ApplicationController
     self.validar_admin
     respond_to do |format|
       if @producto.update(producto_params)
-        format.html { redirect_to @producto, notice: 'Producto was successfully updated.' }
+        format.html { redirect_to @producto, notice: 'Producto actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @producto }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class ProductosController < ApplicationController
     self.validar_admin
     @producto.destroy
     respond_to do |format|
-      format.html { redirect_to productos_url, notice: 'Producto was successfully destroyed.' }
+      format.html { redirect_to productos_url, notice: 'Producto eliminado con éxito.' }
       format.json { head :no_content }
     end
   end

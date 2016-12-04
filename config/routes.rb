@@ -26,13 +26,17 @@ Rails.application.routes.draw do
   
   #Lista de canciones!
   get 'canciones/thriller'
-  get 'canciones/thriller'
-  get 'canciones/thriller'
-  get 'canciones/thriller'
-  get 'canciones/thriller'
-  get 'canciones/thriller'
+  get 'canciones/chandelier'
+  get 'canciones/flashlight'
+  get 'canciones/blankspace'
+  get 'canciones/tryeverything'
+  get 'canciones/ignorance'
+  get 'canciones/thefeeling'
+  get 'canciones/bealright'
+  get 'canciones/team'
+  get 'canciones/superbass'
   
-    
+  
   #MANTENIMIENTOS
   get 'productos/new'
   get 'tipo_productos/new'

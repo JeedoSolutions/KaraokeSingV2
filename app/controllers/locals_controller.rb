@@ -34,7 +34,7 @@ class LocalsController < ApplicationController
 
     respond_to do |format|
       if @local.save
-        format.html { redirect_to @local, notice: 'Local was successfully created.' }
+        format.html { redirect_to @local, notice: 'Local fue creado con éxito.' }
         format.json { render :show, status: :created, location: @local }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class LocalsController < ApplicationController
     self.validar_admin
     respond_to do |format|
       if @local.update(local_params)
-        format.html { redirect_to @local, notice: 'Local was successfully updated.' }
+        format.html { redirect_to @local, notice: 'Local fue actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @local }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class LocalsController < ApplicationController
     self.validar_admin
     @local.destroy
     respond_to do |format|
-      format.html { redirect_to locals_url, notice: 'Local was successfully destroyed.' }
+      format.html { redirect_to locals_url, notice: 'Local fue eliminado con éxito.' }
       format.json { head :no_content }
     end
   end

@@ -33,7 +33,7 @@ class TipoProductosController < ApplicationController
 
     respond_to do |format|
       if @tipo_producto.save
-        format.html { redirect_to @tipo_producto, notice: 'Tipo producto was successfully created.' }
+        format.html { redirect_to @tipo_producto, notice: 'Tipo de producto creado con éxito.' }
         format.json { render :show, status: :created, location: @tipo_producto }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class TipoProductosController < ApplicationController
     self.validar_admin
     respond_to do |format|
       if @tipo_producto.update(tipo_producto_params)
-        format.html { redirect_to @tipo_producto, notice: 'Tipo producto was successfully updated.' }
+        format.html { redirect_to @tipo_producto, notice: 'Tipo de producto actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @tipo_producto }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class TipoProductosController < ApplicationController
     self.validar_admin
     @tipo_producto.destroy
     respond_to do |format|
-      format.html { redirect_to tipo_productos_url, notice: 'Tipo producto was successfully destroyed.' }
+      format.html { redirect_to tipo_productos_url, notice: 'Tipo de producto eliminado con éxito.' }
       format.json { head :no_content }
     end
   end

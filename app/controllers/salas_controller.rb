@@ -38,7 +38,7 @@ class SalasController < ApplicationController
 
     respond_to do |format|
       if @sala.save
-        format.html { redirect_to @sala, notice: 'Sala was successfully created.' }
+        format.html { redirect_to @sala, notice: 'Sala fue creado con éxito.' }
         format.json { render :show, status: :created, location: @sala }
       else
         format.html { render :new }
@@ -53,7 +53,7 @@ class SalasController < ApplicationController
     self.validar_admin
     respond_to do |format|
       if @sala.update(sala_params)
-        format.html { redirect_to @sala, notice: 'Sala was successfully updated.' }
+        format.html { redirect_to @sala, notice: 'Sala fue actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @sala }
       else
         format.html { render :edit }
@@ -68,7 +68,7 @@ class SalasController < ApplicationController
     self.validar_admin
     @sala.destroy
     respond_to do |format|
-      format.html { redirect_to salas_url, notice: 'Sala was successfully destroyed.' }
+      format.html { redirect_to salas_url, notice: 'Sala fue eliminado con éxito.' }
       format.json { head :no_content }
     end
   end

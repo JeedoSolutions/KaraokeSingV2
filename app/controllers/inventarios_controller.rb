@@ -33,7 +33,7 @@ class InventariosController < ApplicationController
 
     respond_to do |format|
       if @inventario.save
-        format.html { redirect_to @inventario, notice: 'Inventario was successfully created.' }
+        format.html { redirect_to @inventario, notice: 'Inventario fue creado con éxito.' }
         format.json { render :show, status: :created, location: @inventario }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class InventariosController < ApplicationController
     self.validar_admin
     respond_to do |format|
       if @inventario.update(inventario_params)
-        format.html { redirect_to @inventario, notice: 'Inventario was successfully updated.' }
+        format.html { redirect_to @inventario, notice: 'Inventario fue actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @inventario }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class InventariosController < ApplicationController
     self.validar_admin
     @inventario.destroy
     respond_to do |format|
-      format.html { redirect_to inventarios_url, notice: 'Inventario was successfully destroyed.' }
+      format.html { redirect_to inventarios_url, notice: 'Inventario fue eliminado con éxito.' }
       format.json { head :no_content }
     end
   end

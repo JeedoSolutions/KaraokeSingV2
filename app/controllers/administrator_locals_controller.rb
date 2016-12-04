@@ -28,7 +28,7 @@ class AdministratorLocalsController < ApplicationController
 
     respond_to do |format|
       if @administrator_local.save
-        format.html { redirect_to @administrator_local, notice: 'Administrator local was successfully created.' }
+        format.html { redirect_to @administrator_local, notice: 'Administrador local ha sido creado con éxito.' }
         format.json { render :show, status: :created, location: @administrator_local }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AdministratorLocalsController < ApplicationController
   def update
     respond_to do |format|
       if @administrator_local.update(administrator_local_params)
-        format.html { redirect_to @administrator_local, notice: 'Administrator local was successfully updated.' }
+        format.html { redirect_to @administrator_local, notice: 'Administrador local fue actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @administrator_local }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class AdministratorLocalsController < ApplicationController
   def destroy
     @administrator_local.destroy
     respond_to do |format|
-      format.html { redirect_to administrator_locals_url, notice: 'Administrator local was successfully destroyed.' }
+      format.html { redirect_to administrator_locals_url, notice: 'Administrador local fue eliminado con éxito' }
       format.json { head :no_content }
     end
   end
